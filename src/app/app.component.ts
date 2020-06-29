@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
+export interface Post {
+  title: string;
+  text: string;
+  id?: number;
+}
 
 @Component({
   selector: 'app-root',
@@ -6,5 +12,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-components';
+  posts: Post[] = [
+    {title: 'Want to learn Angular!', text: 'Im still newbie in this thing', id: 1},
+    {title: 'Want to learn React', text: 'Im still newbie in this thing', id: 2},
+  ];
 }
