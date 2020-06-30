@@ -2,4 +2,12 @@
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
+  position: relative;
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+  }
 }

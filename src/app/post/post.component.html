@@ -2,5 +2,7 @@
   <h2>{{postData.title}}</h2>
   <p>{{postData.text}}</p>
 
+  <button class="card__close" (click)="removePost()">&times;</button>
+
   <ng-content></ng-content>
 </div>
