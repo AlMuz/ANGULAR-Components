@@ -8,7 +8,7 @@ import {Post} from '../app.component';
 })
 export class PostFormComponent implements OnInit {
 
-  @Output() onAdd: EventEmitter<Post> = new EventEmitter<Post>();
+  @Output() addPostEvent: EventEmitter<Post> = new EventEmitter<Post>();
 
   @ViewChild('titleInput', {static: false}) inputReference: ElementRef;
 
@@ -21,19 +21,19 @@ export class PostFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addPost() {
+  addPost(): void {
     if (this.text.trim() && this.title.trim()) {
       const post: Post = {
         title: this.title,
         text: this.text
       };
 
-      this.onAdd.emit(post);
+      this.addPostEvent.emit(post);
       this.title = this.text = '';
     }
   }
 
-  focusTitle() {
+  focusTitle(): void {
     this.inputReference.nativeElement.focus();
   }
 }

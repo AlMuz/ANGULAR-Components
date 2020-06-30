@@ -17,12 +17,11 @@ export class AppComponent {
     {title: 'Want to learn React', text: 'Im still newbie in this thing', id: 2},
   ];
 
-  updatePosts(post: Post) {
+  updatePosts(post: Post): void {
     this.posts.unshift(post);
   }
 
-  removePost(id: number) {
-    console.log(id);
+  removePost(id: number): void {
     this.posts = this.posts.filter(p => p.id !== id);
   }
 }

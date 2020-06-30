@@ -1,13 +1,13 @@
 <div class="container">
   <h1>Angular components</h1>
   <app-post-form
-    (onAdd)="updatePosts($event)"
+    (addPostEvent)="updatePosts($event)"
   ></app-post-form>
   <hr/>
   <app-post
     *ngFor="let post of posts"
     [postData]="post"
-    (onRemove)="removePost($event)"
+    (removeEvent)="removePost($event)"
   >
     <div #info>
       <small *ngIf="post.text.length > 10; else short">Post is long</small>
